@@ -1,0 +1,22 @@
+/* Daystash design tokens (dark fintech). Every colour, size, radius and duration used in the UI comes from here. */
+:root {
+  color-scheme: dark;
+  --font: "Inter", "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --fs-xs: 0.75rem; --fs-sm: 0.8125rem; --fs-md: 0.9375rem; --fs-lg: 1.125rem; --fs-xl: 1.5rem; --fs-2xl: 1.875rem; --fs-3xl: 2.5rem;
+
+  /* Approved palette */
+  --bg: #10111a; --sidebar: #0b0c12; --surface: #191b27; --elevated: #202333; --border: #303345;
+  --violet: #8b6cff; --violet-hover: #7657e8; --violet-soft: #b49aff;
+  --success: #42c994; --warning: #f2b85b; --danger: #f16f7c;
+  --text: #f5f5fa; --text-2: #a2a5b7;
+  /* Derived (same hues, never new accents) */
+  --text-3: #8a8ea2; --border-soft: #262839; --input: #12131c;
+  --violet-tint: rgba(139, 108, 255, 0.14); --violet-line: rgba(139, 108, 255, 0.5);
+  --success-tint: rgba(66, 201, 148, 0.12); --warning-tint: rgba(242, 184, 91, 0.12); --danger-tint: rgba(241, 111, 124, 0.12);
+
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px;
+  --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-xl: 18px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.28); --shadow-pop: 0 20px 56px rgba(0, 0, 0, 0.55);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1); --t-fast: 180ms; --t: 220ms; --t-slow: 250ms;
+  --sidebar-w: 240px; --content-max: 1240px;
+}

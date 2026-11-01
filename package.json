@@ -1,0 +1,21 @@
+{
+  "name": "daystash",
+  "version": "1.0.0",
+  "description": "Daystash: daily expense tracking and adaptive monthly budgets",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^4.22.3"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "private": true
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daystash</title>
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0B0C12">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%238B6CFF'/%3E%3Crect x='7' y='17' width='4' height='8' rx='1' fill='%23fff'/%3E%3Crect x='14' y='11' width='4' height='14' rx='1' fill='%23fff'/%3E%3Crect x='21' y='6' width='4' height='19' rx='1' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/views.css">
+</head>
+<body>
+  <a class="skip-link" href="#view">Skip to content</a>
+  <div class="app">
+    <aside class="sidebar" aria-label="Primary">
+      <a class="brand" href="#/overview" aria-label="Daystash overview">
+        <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#8B6CFF"/><rect x="7" y="17" width="4" height="8" rx="1" fill="#fff"/><rect x="14" y="11" width="4" height="14" rx="1" fill="#fff"/><rect x="21" y="6" width="4" height="19" rx="1" fill="#fff"/></svg>
+        Daystash
+      </a>
+      <nav class="nav" id="nav" aria-label="Sections"></nav>
+      <p class="sidebar-foot">Your data is stored on this computer. Amounts are in Indian rupees (₹).</p>
+    </aside>
+    <div class="content">
+      <div id="banners" role="region" aria-label="Decisions needed" aria-live="polite"></div>
+      <main id="view" tabindex="-1"></main>
+    </div>
+  </div>
+  <nav class="tabbar" id="tabbar" aria-label="Sections (mobile)"></nav>
+
+  <dialog id="expenseDialog" aria-labelledby="expenseTitle">
+    <form id="expenseForm" novalidate>
+      <h2 id="expenseTitle">Add expense</h2>
+      <label class="field">Amount
+        <span class="input-prefix"><span aria-hidden="true">₹</span><input class="input" id="expAmount" inputmode="decimal" placeholder="0.00" autocomplete="off" required></span>
+      </label>
+      <label class="field">Description<input class="input" id="expDesc" maxlength="200" placeholder="What was it for?" autocomplete="off" required></label>
+      <div class="row2">
+        <label class="field">Category<select class="select" id="expCat"></select></label>
+        <label class="field">Date<input class="input" id="expDate" type="date" required></label>
+      </div>
+      <p class="form-error" id="expenseError" role="alert"></p>
+      <div class="dialog-actions"><button type="button" class="btn btn-secondary" data-close>Cancel</button><button class="btn btn-primary" type="submit" id="expenseSave">Save expense</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="budgetDialog" aria-labelledby="budgetTitle">
+    <form id="budgetForm" novalidate>
+      <h2 id="budgetTitle">Monthly budget</h2>
+      <label class="field">Budget for the month
+        <span class="input-prefix"><span aria-hidden="true">₹</span><input class="input" id="budgetAmount" inputmode="decimal" placeholder="0.00" autocomplete="off" required></span>
+      </label>
+      <label class="field">Start tracking on day
+        <input class="input" id="budgetStart" type="number" min="1" max="31" step="1" required>
+        <span class="help" id="budgetStartHelp"></span>
+      </label>
+      <p class="form-error" id="budgetError" role="alert"></p>
+      <div class="dialog-actions"><button type="button" class="btn btn-secondary" data-close>Cancel</button><button class="btn btn-primary" type="submit" id="budgetSave">Save budget</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="confirmDialog" aria-labelledby="confirmTitle">
+    <form onsubmit="return false">
+      <h2 id="confirmTitle"></h2>
+      <p id="confirmIntro" class="note"></p>
+      <dl id="confirmRows" class="kv" hidden></dl>
+      <p id="confirmNote" class="note"></p>
+      <div class="dialog-actions"><button type="button" class="btn btn-secondary" data-result="cancel">Cancel</button><button type="button" class="btn btn-primary" id="confirmOk" data-result="ok">Confirm</button></div>
+    </form>
+  </dialog>
+
+  <div id="toasts" aria-live="polite"></div>
+  <div id="tooltip" role="tooltip"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
